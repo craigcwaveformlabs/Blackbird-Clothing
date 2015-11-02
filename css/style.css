@@ -959,6 +959,13 @@ figure {
   margin: auto;
 }
 
+.content {
+  position: relative;
+  z-index: 2;
+  background: white;
+  margin-bottom: 400px;
+}
+
 .content article {
   padding: 100px 0;
   max-width: 640px;
@@ -978,6 +985,7 @@ img {
   background-position: top center;
   background-attachment: fixed;
   overflow: hidden;
+  z-index: 3;
 }
 
 .logo {
@@ -1153,11 +1161,29 @@ img {
 }
 
 .blog-posts .post-2 {
-  z-index: 2;
+  z-index: 1;
 }
 
 .blog-posts .post-3 {
   -webkit-transform: translate(-100px, 20px);
       -ms-transform: translate(-100px, 20px);
           transform: translate(-100px, 20px);
+}
+
+footer {
+  background: black;
+  color: white;
+  padding: 40px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer .footer-elements {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+footer a {
+  color: white;
 }

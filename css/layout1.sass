@@ -13,9 +13,9 @@ figure
 .content
 
   position: relative
-  z-index: 2
   background: white
   margin-bottom: 400px
+  overflow: hidden
 
   article
     padding: 100px 0
@@ -28,7 +28,7 @@ img
 
 
 
-// Parallax
+// Header Parallax
 
 .bird-box
   position: relative
@@ -89,8 +89,8 @@ img
     margin-bottom: 20px
     position: relative
     opacity: 0
-    transform: translateX(-20px)
-    transition: all 0.3s ease-in-out
+    transform: translateX(30px)
+    transition: all 0.4s ease-in-out
     overflow: hidden
     cursor: pointer
 
@@ -206,6 +206,7 @@ footer
   position: fixed
   bottom: 0
   width: 100%
+  z-index: -1
 
   .footer-elements
     max-width: 640px

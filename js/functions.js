@@ -1,28 +1,40 @@
+
+
+var pContainerHeight = $('.bird-box').height();
+
+
 $(window).scroll(function() {
 
   var wScroll = $(this).scrollTop();
 
-  $('.logo').css({
-    'transform' : 'translate(0px, '+ wScroll / 2 +'%)'
-  });
+  // Header Parallax
+  if (wScroll <= pContainerHeight) {
 
-  $('.back-bird').css({
-    'transform' : 'translate(0px, '+ wScroll / 4 +'%)'
-  });
+    $('.logo').css({
+      'transform' : 'translate(0px, '+ wScroll /2 +'%)'
+    });
 
-  $('.fore-bird').css({
-    'transform' : 'translate(0px, -'+ wScroll / 40 +'%)'
-  });
+    $('.back-bird').css({
+      'transform' : 'translate(0px, '+ wScroll /4 +'%)'
+    });
 
+    $('.fore-bird').css({
+      'transform' : 'translate(0px, -'+ wScroll /40 +'%)'
+    });
+
+  }
+
+  // Landing Elements - Image Grid
   if (wScroll > $('.clothes-pics').offset().top - ($(window).height() / 1.2)) {
     // iterate over each image in the grid
     $('.clothes-pics figure').each(function(i){
       setTimeout(function(){
         $('.clothes-pics figure').eq(i).addClass('is-showing');
-      }, 150 * (i+1));
+      }, (700 * (Math.exp(i * 0.14))) - 600);
     });
   }
 
+  // Promoscope
   if (wScroll > $('.large-window').offset().top - ($(window).height())){
 
     // $('.large-window').css({'background-position':'center '+ (wScroll - $('.large-window').offset().top) +'px'});
@@ -33,6 +45,7 @@ $(window).scroll(function() {
   }
 
 
+  // Floating Elements - blog posts
   if (wScroll > $('.blog-posts').offset().top - $(window).height()) {
 
     var offset = Math.min(0, wScroll - $('.blog-posts').offset().top + $(window).height() - 350);

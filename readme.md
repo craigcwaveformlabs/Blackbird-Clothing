@@ -4,4 +4,5 @@ Creating a parallax effect
 
 ## Section
 
-Section description
+Blackbird Clothing.
+![Blackbird Clothing](images/screenshots/thumbnail.png "Blackbird Clothing Full Page View")
